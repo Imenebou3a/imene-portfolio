@@ -87,60 +87,66 @@ function ArchPhoto() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
+
+    // Retina / high-DPI fix
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = 320;
+    const cssH = 480;
+    canvas.width = cssW * dpr;
+    canvas.height = cssH * dpr;
+    canvas.style.width = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    ctx.scale(dpr, dpr);
+
+    const W = cssW;
+    const H = cssH;
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
 
-      // Layer 1: normal photo
+      // Animate transition progress 0→1
+      const target = isHovered.current ? 1 : 0;
+      revealRadius.current += (target - revealRadius.current) * 0.07;
+      const t = revealRadius.current; // 0 = hero1 fully, 1 = hero2 fully
+
+      // Layer 1: hero1 (fades out as t increases)
       if (img1Ref.current?.naturalWidth > 0) {
+        ctx.globalAlpha = 1 - t;
         ctx.drawImage(img1Ref.current, 0, 0, W, H);
+        ctx.globalAlpha = 1;
       }
 
-      // Animate radius toward target
-      const target = isHovered.current ? 200 : 0;
-      revealRadius.current += (target - revealRadius.current) * 0.09;
+      // Layer 2: hero2 (fades in as t increases)
+      if (img2Ref.current?.naturalWidth > 0 && t > 0.01) {
+        ctx.globalAlpha = t;
+        ctx.drawImage(img2Ref.current, 0, 0, W, H);
+        ctx.globalAlpha = 1;
+      }
 
-      // Layer 2: cyber photo clipped to circle at cursor
-      if (revealRadius.current > 1 && img2Ref.current?.naturalWidth > 0) {
+      // Cursor effects — only when hovered and transition progressing
+      if (isHovered.current && t > 0.05) {
         const mx = mouse.current.x;
         const my = mouse.current.y;
-        const r = revealRadius.current;
 
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(mx, my, r, 0, Math.PI * 2);
-        ctx.clip();
-        ctx.drawImage(img2Ref.current, 0, 0, W, H);
-
-        // Glowing rim inside the circle
-        const rim = ctx.createRadialGradient(mx, my, r * 0.75, mx, my, r);
-        rim.addColorStop(0, 'rgba(0,245,255,0)');
-        rim.addColorStop(0.7, 'rgba(0,245,255,0.08)');
-        rim.addColorStop(1, 'rgba(0,245,255,0.45)');
-        ctx.fillStyle = rim;
-        ctx.fill();
-        ctx.restore();
-
-        // Cyan circle border
-        ctx.beginPath();
-        ctx.arc(mx, my, r, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(0,245,255,${0.6 * (r / 200)})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-
-        // Crosshair at cursor
-        const ch = 10;
-        ctx.strokeStyle = `rgba(0,245,255,${0.8 * (r / 200)})`;
+        // Crosshair
+        const ch = 12;
+        const alpha = Math.min(t * 2, 0.9);
+        ctx.strokeStyle = `rgba(0,245,255,${alpha})`;
         ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(mx - ch, my); ctx.lineTo(mx + ch, my); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(mx, my - ch); ctx.lineTo(mx, my + ch); ctx.stroke();
 
-        // Small circle at cursor center
+        // Outer ring
+        ctx.beginPath();
+        ctx.arc(mx, my, 18, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(0,245,255,${alpha * 0.6})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // Center dot
         ctx.beginPath();
         ctx.arc(mx, my, 3, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0,245,255,0.9)';
+        ctx.fillStyle = `rgba(0,245,255,${alpha})`;
         ctx.fill();
       }
 
@@ -154,9 +160,11 @@ function ArchPhoto() {
   const handleMouseMove = (e) => {
     const rect = canvasRef.current?.getBoundingClientRect();
     if (!rect) return;
-    const sx = canvasRef.current.width / rect.width;
-    const sy = canvasRef.current.height / rect.height;
-    mouse.current = { x: (e.clientX - rect.left) * sx, y: (e.clientY - rect.top) * sy };
+    // Use CSS coordinates (already scaled by ctx.scale(dpr))
+    mouse.current = {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    };
   };
 
   return (
@@ -187,7 +195,7 @@ function ArchPhoto() {
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }} />
         )}
 
-        <canvas ref={canvasRef} width={320} height={480}
+        <canvas ref={canvasRef}
           style={{ width: '100%', height: '100%', display: imagesLoaded ? 'block' : 'none' }} />
 
         {/* Bottom fade */}
