@@ -20,10 +20,10 @@ const skillCategories = [
     color: 'var(--cyan-neon)',
     skills: [
       { name: 'AWS', level: 65 },
-      { name: 'Azure', level: 60 },
-      { name: 'Docker', level: 70 },
-      { name: 'Kubernetes', level: 55 },
-      { name: 'DevSecOps / IAM', level: 65 },
+      { name: 'Azure', level: 40 },
+      { name: 'Docker', level: 30 },
+      { name: 'Kubernetes', level: 30 },
+      { name: 'DevSecOps / IAM', level: 35 },
     ],
   },
   {
@@ -35,7 +35,7 @@ const skillCategories = [
       { name: 'Python', level: 75 },
       { name: 'PHP / Symfony', level: 72 },
       { name: 'JavaScript / HTML / CSS', level: 78 },
-      { name: 'C / C++', level: 68 },
+      { name: 'C / C++', level: 88 },
     ],
   },
   {
