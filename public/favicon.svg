@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#0a0608"/>
+
+  <!-- Outer decorative ring -->
+  <circle cx="32" cy="32" r="29" stroke="url(#g1)" stroke-width="1" stroke-dasharray="4 2"/>
+
+  <!-- Inner circle -->
+  <circle cx="32" cy="32" r="23" stroke="url(#g1)" stroke-width="1.2" fill="none"/>
+
+  <!-- IB letters -->
+  <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle"
+    font-family="Georgia, serif" font-size="20" font-weight="300"
+    fill="url(#g1)" letter-spacing="-1">IB</text>
+
+  <!-- Top dot -->
+  <circle cx="32" cy="5" r="2" fill="#c9956a"/>
+
+  <!-- Side marks -->
+  <line x1="3" y1="32" x2="7" y2="32" stroke="#c9956a" stroke-width="1"/>
+  <line x1="57" y1="32" x2="61" y2="32" stroke="#c9956a" stroke-width="1"/>
+
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8b49a"/>
+      <stop offset="50%" stop-color="#c9956a"/>
+      <stop offset="100%" stop-color="#9a6840"/>
+    </linearGradient>
+  </defs>
+</svg>
