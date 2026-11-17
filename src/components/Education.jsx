@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const modules = [
-  { name: 'Infrastructure des réseaux IP', icon: '🌐' },
-  { name: 'Projet Intégré Système et Réseau', icon: '🔧' },
-  { name: 'Management de l\'entreprise', icon: '📊' },
-  { name: 'Réseau IP et routage', icon: '📡' },
-  { name: 'Administration des SE', icon: '🖥️' },
+  { name: 'Infrastructure des réseaux IP', icon: '◈' },
+  { name: 'Projet Intégré Système et Réseau', icon: '◆' },
+  { name: 'Management de l\'entreprise', icon: '▸' },
+  { name: 'Réseau IP et routage', icon: '◇' },
+  { name: 'Administration des SE', icon: '▪' },
 ];
 
 const domains = [
@@ -55,8 +55,8 @@ export default function Education() {
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, var(--rose-gold), transparent)' }} />
 
             <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '24px' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(201,149,106,0.1)', border: '1px solid rgba(201,149,106,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0 }}>
-                🎓
+              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(201,149,106,0.1)', border: '1px solid rgba(201,149,106,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', color: 'var(--rose-gold)', flexShrink: 0 }}>
+                ✦
               </div>
               <div>
                 <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '22px', fontWeight: 400, color: 'var(--white)', marginBottom: '4px' }}>ESPRIT</h3>
@@ -71,7 +71,7 @@ export default function Education() {
                 { label: 'Degree', value: 'Engineering Diploma (Génie Informatique)' },
                 { label: 'Specialty', value: 'Cybersecurity & Cloud Engineering' },
                 { label: 'Duration', value: '5-year integrated cycle' },
-                { label: 'Location', value: 'Tunisia 🇹🇳' },
+                { label: 'Location', value: 'Tunisia' },
               ].map(item => (
                 <div key={item.label} style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
                   <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '2px', textTransform: 'uppercase', minWidth: '80px', flexShrink: 0 }}>{item.label}</span>
@@ -82,7 +82,7 @@ export default function Education() {
 
             {/* CCNA badge */}
             <div style={{ padding: '12px 16px', background: 'rgba(27,160,215,0.08)', border: '1px solid rgba(27,160,215,0.3)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '18px' }}>🏆</span>
+              <span style={{ fontSize: '16px', color: '#1ba0d7' }}>◈</span>
               <div>
                 <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: '#1ba0d7', letterSpacing: '1px' }}>Cisco CCNA Certified</div>
                 <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: 'var(--text-muted)', marginTop: '2px' }}>Routing, Switching & Network Fundamentals</div>
@@ -96,7 +96,7 @@ export default function Education() {
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, var(--cyan-neon), transparent)' }} />
 
             <h3 style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--cyan-neon)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              📋 Key Modules Covered
+              ▸ Key Modules Covered
             </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>

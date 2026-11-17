@@ -236,19 +236,19 @@ function ArchPhoto() {
       <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
         style={{ position: 'absolute', top: '10%', right: '-125px', padding: '10px 14px', background: 'rgba(10,6,8,0.92)', border: '1px solid rgba(0,245,255,0.4)', borderRadius: '8px', fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--cyan-neon)', zIndex: 10, whiteSpace: 'nowrap', backdropFilter: 'blur(10px)' }}>
         <div style={{ marginBottom: '3px', opacity: 0.5, fontSize: '8px', letterSpacing: '2px' }}>STATUS</div>
-        🟢 Available
+        ◆ Available
       </motion.div>
 
       <motion.div animate={{ y: [5, -5, 5] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
         style={{ position: 'absolute', bottom: '26%', left: '-116px', padding: '10px 14px', background: 'rgba(10,6,8,0.92)', border: '1px solid rgba(201,149,106,0.4)', borderRadius: '8px', fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--rose-gold)', zIndex: 10, whiteSpace: 'nowrap', backdropFilter: 'blur(10px)' }}>
         <div style={{ marginBottom: '3px', opacity: 0.5, fontSize: '8px', letterSpacing: '2px' }}>LOCATION</div>
-        📍 Tunisia
+        ◈ Tunisia
       </motion.div>
 
       <motion.div animate={{ y: [-4, 6, -4] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
         style={{ position: 'absolute', top: '44%', right: '-118px', padding: '10px 14px', background: 'rgba(10,6,8,0.92)', border: '1px solid rgba(180,79,255,0.4)', borderRadius: '8px', fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--purple-neon)', zIndex: 10, whiteSpace: 'nowrap', backdropFilter: 'blur(10px)' }}>
         <div style={{ marginBottom: '3px', opacity: 0.5, fontSize: '8px', letterSpacing: '2px' }}>CCNA</div>
-        🛡️ Certified
+        ✦ Certified
       </motion.div>
     </motion.div>
   );

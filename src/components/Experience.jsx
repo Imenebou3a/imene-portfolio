@@ -1,13 +1,13 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const experiences = [
   {
     period: 'Aug 2024',
-    role: 'Stagiaire — Banque UIB',
-    company: 'UIB — Groupe Société Générale',
-    location: 'Tunis, Tunisia 🇹🇳',
-    type: 'Internship · 1 month',
+    role: 'Stagiaire â€” Banque UIB',
+    company: 'UIB â€” Groupe SociÃ©tÃ© GÃ©nÃ©rale',
+    location: 'Tunis, Tunisia',
+    type: 'Internship Â· 1 month',
     color: 'var(--gold)',
     points: [
       'Discovered the internal workings of a bank by supporting the team with administrative tasks including database updates and document organisation',
@@ -17,14 +17,14 @@ const experiences = [
     ],
   },
   {
-    period: 'Jul 2026 — Aug 2026',
-    role: 'Intern — Software & Technical Documentation',
-    company: 'CERT (Centre d\'Études et de Recherches des Télécommunications)',
-    location: 'Tunisia 🇹🇳',
-    type: 'Internship · 6 weeks',
+    period: 'Jul 2026 â€” Aug 2026',
+    role: 'Intern â€” Software & Technical Documentation',
+    company: 'CERT (Centre d\'Ã‰tudes et de Recherches des TÃ©lÃ©communications)',
+    location: 'Tunisia ðŸ‡¹ðŸ‡³',
+    type: 'Internship Â· 6 weeks',
     color: 'var(--cyan-neon)',
     points: [
-      'Developed CERT Track — a JavaFX/MySQL desktop application to digitalize equipment certification workflows',
+      'Developed CERT Track â€” a JavaFX/MySQL desktop application to digitalize equipment certification workflows',
       'Designed role-based access control (Admin / Engineer / Manager) with BCrypt authentication',
       'Implemented automated PDF compliance report generation using OpenPDF',
       'Worked on technical documentation for equipment entering the Tunisian market (routers, wireless, phones, IoT)',
@@ -32,31 +32,31 @@ const experiences = [
     ],
   },
   {
-    period: '2023 — Present',
-    role: 'Engineering Student — Cybersecurity & Cloud Specialty',
-    company: 'ESPRIT — École Supérieure Privée d\'Ingénierie et de Technologies',
-    location: 'Tunisia 🇹🇳',
-    type: 'Academic · 5-year cycle',
+    period: '2023 â€” Present',
+    role: 'Engineering Student â€” Cybersecurity & Cloud Specialty',
+    company: 'ESPRIT â€” Ã‰cole SupÃ©rieure PrivÃ©e d\'IngÃ©nierie et de Technologies',
+    location: 'Tunisia ðŸ‡¹ðŸ‡³',
+    type: 'Academic Â· 5-year cycle',
     color: 'var(--rose-gold)',
     points: [
       'Specialized in Cybersecurity & Cloud Engineering (first-choice specialty)',
       'Built enterprise network infrastructure simulations with Cisco, GNS3, OSPF, VLSM, NAT & VPN',
       'Developed full-stack applications: Lammetna (Java/PHP/Symfony), CERT Track (JavaFX/MySQL)',
       'Built a personal CyberLab using VMware, Kali Linux and Ubuntu Server for hands-on security practice',
-      'Obtained Cisco CCNA certification — covering routing, switching and network fundamentals',
+      'Obtained Cisco CCNA certification â€” covering routing, switching and network fundamentals',
       'Completed projects in Java, Python, C/C++, PHP, JavaScript, FlutterFlow, Arduino and Qt',
     ],
   },
   {
     period: 'May 2026',
-    role: 'SCRUM MASTER — Lammetna PIDEV',
+    role: 'SCRUM MASTER â€” Lammetna PIDEV',
     company: 'ESPRIT Academic Project',
-    location: 'Tunisia 🇹🇳',
+    location: 'Tunisia ðŸ‡¹ðŸ‡³',
     type: 'Academic Project',
     color: 'var(--pink-neon)',
     points: [
       'Led development of Lammetna, a platform for discovering authentic Tunisian local products and culture',
-      'Responsible for Gestion des produits locaux module — full product catalog, cart, checkout, Stripe & AI recommendations',
+      'Responsible for Gestion des produits locaux module â€” full product catalog, cart, checkout, Stripe & AI recommendations',
       'Managed project delivery with Scrum: product backlog, user stories, sprint reviews, burn-down charts, Trello',
       'Integrated OpenAI API for AI-powered product recommendations and OpenStreetMap for delivery logistics',
       'Produced full documentation: UML sequence diagrams, README, Git history, demo materials',
@@ -73,7 +73,7 @@ export default function Experience() {
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}
           style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <div className="deco-line" style={{ marginBottom: '20px' }}><span>04</span><span>Experience</span><span>✦</span></div>
+          <div className="deco-line" style={{ marginBottom: '20px' }}><span>04</span><span>Experience</span><span>âœ¦</span></div>
           <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 300, color: 'var(--white)' }}>
             Career{' '}
             <span style={{ background: 'linear-gradient(135deg, #e8b49a, #c9956a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontStyle: 'italic' }}>Timeline</span>
@@ -116,7 +116,7 @@ export default function Experience() {
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   {exp.points.map((point, j) => (
                     <li key={j} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', color: 'var(--white-dim)', fontSize: '13px', lineHeight: 1.7, fontWeight: 300 }}>
-                      <span style={{ color: exp.color, marginTop: '6px', flexShrink: 0, fontSize: '6px' }}>◆</span>
+                      <span style={{ color: exp.color, marginTop: '6px', flexShrink: 0, fontSize: '6px' }}>â—†</span>
                       {point}
                     </li>
                   ))}
@@ -129,3 +129,4 @@ export default function Experience() {
     </section>
   );
 }
+

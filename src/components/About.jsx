@@ -49,7 +49,7 @@ export default function About() {
                 <text x="80" y="268" fontFamily="Space Mono" fontSize="10" fill="rgba(0,245,255,0.6)" letterSpacing="1">$ certifications</text>
                 <text x="80" y="290" fontFamily="Space Mono" fontSize="9" fill="rgba(255,110,180,0.9)">✓ Cisco CCNA</text>
                 <text x="80" y="318" fontFamily="Space Mono" fontSize="10" fill="rgba(0,245,255,0.6)" letterSpacing="1">$ location</text>
-                <text x="80" y="340" fontFamily="Space Mono" fontSize="9" fill="rgba(201,149,106,0.8)">📍 Tunisia 🇹🇳</text>
+                <text x="80" y="340" fontFamily="Space Mono" fontSize="9" fill="rgba(201,149,106,0.8)">◈ Tunisia</text>
                 <motion.rect x="80" y="358" width="6" height="12" fill="rgba(201,149,106,0.8)"
                   animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1, repeat: Infinity }} />
 
@@ -60,11 +60,11 @@ export default function About() {
 
               <motion.div animate={{ y: [-4, 4, -4] }} transition={{ duration: 3, repeat: Infinity }}
                 style={{ position: 'absolute', top: '10%', right: '-12%', padding: '8px 14px', background: 'rgba(10,6,8,0.9)', border: '1px solid rgba(0,245,255,0.3)', borderRadius: '4px', fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--cyan-neon)', zIndex: 10 }}>
-                🔒 Security First
+                ◆ Security First
               </motion.div>
               <motion.div animate={{ y: [4, -4, 4] }} transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
                 style={{ position: 'absolute', bottom: '15%', left: '-10%', padding: '8px 14px', background: 'rgba(10,6,8,0.9)', border: '1px solid rgba(201,149,106,0.3)', borderRadius: '4px', fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--rose-gold)', zIndex: 10 }}>
-                ☁️ Cloud Native
+                ✦ Cloud Native
               </motion.div>
             </div>
           </motion.div>
@@ -94,10 +94,10 @@ export default function About() {
 
             {/* Education block */}
             <div style={{ padding: '20px 24px', border: '1px solid var(--border)', borderLeft: '3px solid var(--rose-gold)', borderRadius: '4px', background: 'rgba(26,18,21,0.4)', marginBottom: '28px' }}>
-              <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', letterSpacing: '3px', color: 'var(--rose-gold)', textTransform: 'uppercase', marginBottom: '8px' }}>🎓 Education</div>
+              <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', letterSpacing: '3px', color: 'var(--rose-gold)', textTransform: 'uppercase', marginBottom: '8px' }}>▸ Education</div>
               <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '18px', color: 'var(--white)', marginBottom: '4px' }}>ESPRIT — Génie Informatique</div>
               <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--white-dim)' }}>Cybersecurity & Cloud Engineering Specialty</div>
-              <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--text-muted)', marginTop: '4px' }}>5-year engineering cycle • Tunisia 🇹🇳</div>
+              <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--text-muted)', marginTop: '4px' }}>5-year engineering cycle · Tunisia</div>
             </div>
 
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>

@@ -10,7 +10,7 @@ export default function Footer() {
             <Logo size={36} />
             <div>
               <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '15px', color: 'var(--rose-gold)', letterSpacing: '2px' }}>IMENE BOUABDALLAH</div>
-              <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '2px' }}>Cybersecurity & Cloud Engineering · ESPRIT 🇹🇳</div>
+              <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '2px' }}>Cybersecurity & Cloud Engineering · ESPRIT · Tunisia</div>
             </div>
           </div>
           <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap' }}>
@@ -25,7 +25,7 @@ export default function Footer() {
         <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, var(--border-bright), transparent)', marginBottom: '28px' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
           <p style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--text-muted)', letterSpacing: '1px' }}>
-            © 2026 Imene Bouabdallah · Built with 🔐 & ☁️ · Tunisia 🇹🇳
+            © 2026 Imene Bouabdallah · Built with ◆ · Tunisia
           </p>
           <p style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--text-muted)', letterSpacing: '1px' }}>
             React + Framer Motion + Vite

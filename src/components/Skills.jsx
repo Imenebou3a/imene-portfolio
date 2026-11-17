@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 const skillCategories = [
   {
     title: 'Cybersecurity & Networks',
-    icon: '🛡️',
+    icon: '◈',
     color: 'var(--pink-neon)',
     skills: [
       { name: 'Kali Linux / Ethical Hacking', level: 75 },
@@ -16,7 +16,7 @@ const skillCategories = [
   },
   {
     title: 'Cloud & DevOps',
-    icon: '☁️',
+    icon: '◆',
     color: 'var(--cyan-neon)',
     skills: [
       { name: 'AWS', level: 65 },
@@ -28,7 +28,7 @@ const skillCategories = [
   },
   {
     title: 'Development',
-    icon: '⌨️',
+    icon: '▸',
     color: 'var(--rose-gold)',
     skills: [
       { name: 'Java / JavaFX', level: 82 },
@@ -40,7 +40,7 @@ const skillCategories = [
   },
   {
     title: 'Tools & Platforms',
-    icon: '🔧',
+    icon: '◇',
     color: 'var(--purple-neon)',
     skills: [
       { name: 'Git / GitHub', level: 82 },
@@ -60,7 +60,7 @@ const certBadges = [
     issuer: 'Cisco Networking Academy',
     status: 'completed',
     color: '#1ba0d7',
-    icon: '🏆',
+    icon: '◈',
   },
   {
     name: 'Introduction to Cybersecurity',
@@ -69,7 +69,7 @@ const certBadges = [
     issuer: 'Cisco Networking Academy',
     status: 'completed',
     color: '#00c896',
-    icon: '🛡️',
+    icon: '◆',
   },
   {
     name: 'AWS Cloud Practitioner',
@@ -78,7 +78,7 @@ const certBadges = [
     issuer: 'Amazon Web Services',
     status: 'progress',
     color: '#FF9900',
-    icon: '☁️',
+    icon: '◇',
   },
   {
     name: 'DevSecOps',
@@ -87,7 +87,7 @@ const certBadges = [
     issuer: 'Self-study',
     status: 'progress',
     color: '#b44fff',
-    icon: '🔐',
+    icon: '▸',
   },
 ];
 
@@ -149,7 +149,7 @@ export default function Skills() {
         {/* Languages */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.4 }}
           style={{ marginBottom: '40px', padding: '24px 28px', border: '1px solid var(--border)', borderRadius: '4px', background: 'rgba(26,18,21,0.4)' }}>
-          <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', letterSpacing: '4px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '16px' }}>🌍 Languages</div>
+          <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', letterSpacing: '4px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '16px' }}>◈ Languages</div>
           <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
             {[{ lang: 'Arabic', level: 'Native', color: 'var(--rose-gold)' }, { lang: 'French', level: 'B2', color: 'var(--cyan-neon)' }, { lang: 'English', level: 'B2', color: 'var(--purple-neon)' }].map(l => (
               <div key={l.lang} style={{ textAlign: 'center' }}>

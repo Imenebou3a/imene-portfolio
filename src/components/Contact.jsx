@@ -2,10 +2,10 @@ import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const socials = [
-  { label: 'GitHub', icon: '⌥', href: 'https://github.com/Imenebou3a', handle: '@Imenebou3a', color: 'var(--white-dim)' },
-  { label: 'LinkedIn', icon: '◈', href: 'https://www.linkedin.com/in/imene-bouabdallah-49b6341b1', handle: 'Imen Bouabdallah', color: 'var(--cyan-neon)' },
+  { label: 'GitHub', icon: '◈', href: 'https://github.com/Imenebou3a', handle: '@Imenebou3a', color: 'var(--white-dim)' },
+  { label: 'LinkedIn', icon: '◆', href: 'https://www.linkedin.com/in/imene-bouabdallah-49b6341b1', handle: 'Imen Bouabdallah', color: 'var(--cyan-neon)' },
   { label: 'Email', icon: '✉', href: 'mailto:imen.bouabdallah@esprit.tn', handle: 'imen.bouabdallah@esprit.tn', color: 'var(--rose-gold)' },
-  { label: 'Location', icon: '📍', href: '#', handle: 'Tunisia 🇹🇳', color: 'var(--pink-neon)' },
+  { label: 'Location', icon: '◇', href: '#', handle: 'Tunisia', color: 'var(--pink-neon)' },
 ];
 
 export default function Contact() {
