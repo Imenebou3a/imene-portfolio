@@ -53,11 +53,42 @@ const skillCategories = [
 ];
 
 const certBadges = [
-  { name: 'Cisco CCNA', full: 'CCNA Certified', color: '#1ba0d7' },
-  { name: 'AWS Cloud', full: 'AWS Cloud Practitioner (learning)', color: '#FF9900' },
-  { name: 'DevSecOps', full: 'DevSecOps in progress', color: '#00f5ff' },
-  { name: 'Kali Linux', full: 'Ethical Hacking Practice', color: '#ff6eb4' },
-  { name: 'GNS3 / Cisco', full: 'Network Simulation', color: '#b44fff' },
+  {
+    name: 'CCNA: Présentation des réseaux',
+    full: 'Cisco Networking Academy via ESPRIT — Completed 15 Jul 2026',
+    date: '15 Jul 2026',
+    issuer: 'Cisco Networking Academy',
+    status: 'completed',
+    color: '#1ba0d7',
+    icon: '🏆',
+  },
+  {
+    name: 'Introduction to Cybersecurity',
+    full: 'Cisco Networking Academy — Completed 10 Aug 2026 · ID: 519a2cb6',
+    date: '10 Aug 2026',
+    issuer: 'Cisco Networking Academy',
+    status: 'completed',
+    color: '#00c896',
+    icon: '🛡️',
+  },
+  {
+    name: 'AWS Cloud Practitioner',
+    full: 'In progress — AWS Cloud Foundations',
+    date: 'In progress',
+    issuer: 'Amazon Web Services',
+    status: 'progress',
+    color: '#FF9900',
+    icon: '☁️',
+  },
+  {
+    name: 'DevSecOps',
+    full: 'In progress — DevSecOps & IAM fundamentals',
+    date: 'In progress',
+    issuer: 'Self-study',
+    status: 'progress',
+    color: '#b44fff',
+    icon: '🔐',
+  },
 ];
 
 function SkillBar({ name, level, color, delay }) {
@@ -130,14 +161,48 @@ export default function Skills() {
         </motion.div>
 
         {/* Cert badges */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5 }} style={{ textAlign: 'center' }}>
-          <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', letterSpacing: '4px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '24px' }}>Certifications & Badges</div>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5 }}>
+          <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', letterSpacing: '4px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '24px', textAlign: 'center' }}>Certifications & Badges</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             {certBadges.map((cert, i) => (
-              <motion.div key={cert.name} initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 0.6 + i * 0.08 }}
-                whileHover={{ scale: 1.06, y: -3 }} title={cert.full}
-                style={{ padding: '10px 20px', border: `1px solid ${cert.color}50`, borderRadius: '100px', background: `${cert.color}10`, fontFamily: 'Space Mono, monospace', fontSize: '11px', color: cert.color, letterSpacing: '1px', boxShadow: `0 0 15px ${cert.color}15`, cursor: 'default' }}>
-                {cert.name}
+              <motion.div key={cert.name}
+                initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 + i * 0.1 }}
+                whileHover={{ y: -4, boxShadow: `0 8px 32px ${cert.color}25` }}
+                style={{
+                  padding: '20px 24px',
+                  border: `1px solid ${cert.color}${cert.status === 'completed' ? '60' : '30'}`,
+                  borderRadius: '6px',
+                  background: `${cert.color}${cert.status === 'completed' ? '0e' : '06'}`,
+                  backdropFilter: 'blur(10px)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  cursor: 'default',
+                }}>
+                {/* top glow strip */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, transparent, ${cert.color}${cert.status === 'completed' ? 'cc' : '55'}, transparent)` }} />
+
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px', marginBottom: '12px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ fontSize: '20px' }}>{cert.icon}</span>
+                    <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: cert.color, letterSpacing: '0.5px', lineHeight: 1.4 }}>{cert.name}</span>
+                  </div>
+                  <span style={{
+                    flexShrink: 0,
+                    padding: '3px 10px',
+                    borderRadius: '100px',
+                    fontFamily: 'Space Mono, monospace',
+                    fontSize: '9px',
+                    letterSpacing: '1px',
+                    background: cert.status === 'completed' ? `${cert.color}20` : 'rgba(255,255,255,0.05)',
+                    color: cert.status === 'completed' ? cert.color : 'var(--text-muted)',
+                    border: `1px solid ${cert.status === 'completed' ? cert.color + '50' : 'rgba(255,255,255,0.1)'}`,
+                  }}>
+                    {cert.status === 'completed' ? '✓ Completed' : '⏳ In progress'}
+                  </span>
+                </div>
+
+                <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '1px', marginBottom: '4px' }}>{cert.issuer}</div>
+                <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: cert.status === 'completed' ? cert.color + 'aa' : 'var(--text-muted)', letterSpacing: '1px' }}>{cert.date}</div>
               </motion.div>
             ))}
           </div>
