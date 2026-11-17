@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const modules = [
-  { name: 'Infrastructure des réseaux IP', grade: '15.40', color: 'var(--cyan-neon)', icon: '🌐' },
-  { name: 'Projet Intégré Système et Réseau', grade: '13.10', color: 'var(--rose-gold)', icon: '🔧' },
-  { name: 'Management de l\'entreprise', grade: '11.28', color: 'var(--purple-neon)', icon: '📊' },
-  { name: 'Réseau IP et routage', grade: '10.41', color: 'var(--pink-neon)', icon: '📡' },
-  { name: 'Administration des SE', grade: '8.75', color: 'var(--white-dim)', icon: '🖥️' },
+  { name: 'Infrastructure des réseaux IP', icon: '🌐' },
+  { name: 'Projet Intégré Système et Réseau', icon: '🔧' },
+  { name: 'Management de l\'entreprise', icon: '📊' },
+  { name: 'Réseau IP et routage', icon: '📡' },
+  { name: 'Administration des SE', icon: '🖥️' },
 ];
 
 const domains = [
@@ -72,7 +72,6 @@ export default function Education() {
                 { label: 'Specialty', value: 'Cybersecurity & Cloud Engineering' },
                 { label: 'Duration', value: '5-year integrated cycle' },
                 { label: 'Location', value: 'Tunisia 🇹🇳' },
-                { label: 'Average', value: '~11.87 / 20' },
               ].map(item => (
                 <div key={item.label} style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
                   <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '2px', textTransform: 'uppercase', minWidth: '80px', flexShrink: 0 }}>{item.label}</span>
@@ -91,38 +90,23 @@ export default function Education() {
             </div>
           </motion.div>
 
-          {/* Grades card */}
+          {/* Modules covered card (grades removed) */}
           <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}
             style={{ padding: '32px', background: 'rgba(26,18,21,0.6)', border: '1px solid var(--border)', borderRadius: '4px', backdropFilter: 'blur(10px)', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, var(--cyan-neon), transparent)' }} />
 
-            <h3 style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--cyan-neon)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '28px' }}>
-              📋 Key Module Grades
+            <h3 style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--cyan-neon)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              📋 Key Modules Covered
             </h3>
 
-            {modules.map((mod, i) => {
-              const pct = (parseFloat(mod.grade) / 20) * 100;
-              return (
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {modules.map((mod, i) => (
                 <motion.div key={mod.name} initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.3 + i * 0.1 }}
-                  style={{ marginBottom: '18px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ fontSize: '14px' }}>{mod.icon}</span>
-                      <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--white-dim)', letterSpacing: '0.5px' }}>{mod.name}</span>
-                    </div>
-                    <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '20px', fontWeight: 300, color: mod.color }}>{mod.grade}</span>
-                  </div>
-                  <div style={{ height: '3px', background: 'rgba(255,255,255,0.06)', borderRadius: '2px', overflow: 'hidden' }}>
-                    <motion.div initial={{ width: 0 }} animate={inView ? { width: `${pct}%` } : {}} transition={{ duration: 1.2, delay: 0.4 + i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      style={{ height: '100%', background: `linear-gradient(90deg, ${mod.color}88, ${mod.color})`, borderRadius: '2px' }} />
-                  </div>
+                  style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '14px 0', borderBottom: i < modules.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                  <span style={{ fontSize: '16px' }}>{mod.icon}</span>
+                  <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '11px', color: 'var(--white-dim)', letterSpacing: '0.5px' }}>{mod.name}</span>
                 </motion.div>
-              );
-            })}
-
-            <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--text-muted)', letterSpacing: '2px' }}>OVERALL AVERAGE</span>
-              <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '32px', fontWeight: 300, background: 'linear-gradient(135deg, #e8b49a, #c9956a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>11.87</span>
+              ))}
             </div>
           </motion.div>
         </div>
