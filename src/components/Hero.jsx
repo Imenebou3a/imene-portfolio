@@ -290,7 +290,7 @@ export default function Hero() {
               style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(48px, 6vw, 96px)', fontWeight: 300, lineHeight: 0.92, color: 'var(--white)', marginBottom: '20px', letterSpacing: '-2px' }}>
               <GlitchText text="IMEN" />
               <br />
-              <span style={{ background: 'linear-gradient(135deg, #e8b49a 0%, #c9956a 50%, #9a6840 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <span style={{ background: 'linear-gradient(135deg, #ffe9a8 0%, #f5c45a 50%, #d4a017 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'drop-shadow(0 0 34px rgba(245, 196, 90, 0.45))' }}>
                 BOUABDALLAH
               </span>
             </motion.h1>

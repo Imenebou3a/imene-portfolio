@@ -20,6 +20,10 @@
   --gradient-rose: linear-gradient(135deg, #c9956a, #e8b49a, #9a6840);
   --gradient-cyber: linear-gradient(135deg, #ff6eb4, #b44fff, #00f5ff);
   --gradient-dark: linear-gradient(180deg, #0a0608 0%, #110d0f 100%);
+  --gold: #f5c45a;
+  --gold-light: #ffe9a8;
+  --gold-deep: #d4a017;
+  --gradient-gold: linear-gradient(135deg, #ffe9a8 0%, #f5c45a 50%, #d4a017 100%);
 }
 
 * {
@@ -74,13 +78,13 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--rose-gold-dark);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold), var(--gold-deep));
   border-radius: 2px;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(201, 149, 106, 0.3);
+  background: rgba(245, 196, 90, 0.3);
   color: var(--white);
 }
 
@@ -144,11 +148,12 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--rose-gold);
+  color: var(--gold-light);
   font-family: 'Space Mono', monospace;
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(245, 196, 90, 0.45);
 }
 
 .deco-line::before,
@@ -156,7 +161,7 @@ body {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 /* Section layout */
@@ -178,9 +183,10 @@ body::before {
 
 /* Animated gradient background */
 .animated-bg {
-  background: 
+  background:
     radial-gradient(ellipse at 20% 20%, rgba(92, 26, 46, 0.3) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 80%, rgba(201, 149, 106, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 12%, rgba(245, 196, 90, 0.08) 0%, transparent 45%),
     radial-gradient(ellipse at 50% 50%, rgba(180, 79, 255, 0.05) 0%, transparent 70%),
     var(--bg-primary);
 }
