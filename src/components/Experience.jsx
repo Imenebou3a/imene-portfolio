@@ -3,6 +3,20 @@ import { motion, useInView } from 'framer-motion';
 
 const experiences = [
   {
+    period: 'Aug 2024',
+    role: 'Stagiaire — Banque UIB',
+    company: 'UIB — Groupe Société Générale',
+    location: 'Tunis, Tunisia 🇹🇳',
+    type: 'Internship · 1 month',
+    color: 'var(--gold)',
+    points: [
+      'Discovered the internal workings of a bank by supporting the team with administrative tasks including database updates and document organisation',
+      'Interacted directly with clients, gaining practical understanding of core banking and financial services',
+      'Developed B2B communication skills and professional reactivity in a fast-paced banking environment',
+      'Exposure to banking operations, compliance workflows, and financial service processes',
+    ],
+  },
+  {
     period: 'Jul 2026 — Aug 2026',
     role: 'Intern — Software & Technical Documentation',
     company: 'CERT (Centre d\'Études et de Recherches des Télécommunications)',
@@ -34,7 +48,7 @@ const experiences = [
     ],
   },
   {
-    period: '2024',
+    period: 'May 2026',
     role: 'SCRUM MASTER — Lammetna PIDEV',
     company: 'ESPRIT Academic Project',
     location: 'Tunisia 🇹🇳',
