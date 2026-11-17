@@ -100,10 +100,16 @@ export default function About() {
               <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: 'var(--text-muted)', marginTop: '4px' }}>5-year engineering cycle • Tunisia 🇹🇳</div>
             </div>
 
-            <motion.a href="#contact" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 28px', border: '1px solid var(--rose-gold)', color: 'var(--rose-gold)', fontFamily: 'Space Mono, monospace', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '2px' }}>
-              Download CV ↓
-            </motion.a>
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+              <motion.a href="/Imen_Bouabdallah_CV_English%20(1).pdf" download whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 28px', border: '1px solid var(--rose-gold)', color: 'var(--rose-gold)', fontFamily: 'Space Mono, monospace', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '2px' }}>
+                Download CV (English) ↓
+              </motion.a>
+              <motion.a href="/CV_Imen_Bouabdallah_Professionnel.pdf" download whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 28px', border: '1px solid var(--rose-gold)', color: 'var(--rose-gold)', fontFamily: 'Space Mono, monospace', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '2px' }}>
+                Télécharger CV (Français) ↓
+              </motion.a>
+            </div>
           </motion.div>
         </div>
       </div>
